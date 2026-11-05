@@ -226,15 +226,6 @@ class $modify(CappedPlayLayer, PlayLayer) {
         return PlayLayer::init(level, useReplay, dontCreateObjects);
     }
 
-    void levelComplete() {
-        PlayLayer::levelComplete();
-
-        if (cappedThisAttempt) {
-            Notification::create("CPS capped", NotificationIcon::Info)->show();
-            cappedThisAttempt = false;
-        }
-    }
-
     void resetLevel() {
         gates.clear();
         cappedThisAttempt = false;
